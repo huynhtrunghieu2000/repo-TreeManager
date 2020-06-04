@@ -77,14 +77,14 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 					preStmt.setLong(index, (Long) parameter);
 				}else if(parameter instanceof String) {
 					preStmt.setString(index, (String) parameter);
-				}else if(parameter instanceof int[]) {
-					preStmt.setInt(index, (int) parameter);
-				}else if(parameter instanceof boolean[]) {
-					preStmt.setBoolean(index, (boolean) parameter);
-				}else if(parameter instanceof float[]) {
-					preStmt.setFloat(index, (float) parameter);
-				}else if(parameter instanceof double[]) {
-					preStmt.setDouble(index, (double) parameter);
+				}else if(parameter instanceof Integer) {
+					preStmt.setInt(index, (Integer) parameter);
+				}else if(parameter instanceof Boolean) {
+					preStmt.setBoolean(index, (Boolean) parameter);
+				}else if(parameter instanceof Float) {
+					preStmt.setFloat(index, (Float) parameter);
+				}else if(parameter instanceof Double) {
+					preStmt.setDouble(index, (Double) parameter);
 				}else if(parameter instanceof Timestamp) {
 					preStmt.setTimestamp(index,	(Timestamp)parameter);
 				}

@@ -42,7 +42,7 @@ create table CONGVIEC
 	MaNguoiDung varchar(40) not null,
 	TenCongViec varchar(40) not null,
 	LoaiCongViec varchar(40),
-	ThoiGianBatDau datetime,
+	ThoiGianBatDau TimeStamp,
 	ThoiGianKetThuc datetime,
 	primary key(MaCongViec),
 	foreign key (MaNguoiDung) references NGUOIDUNG(MaNguoiDung)

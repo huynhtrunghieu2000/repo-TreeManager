@@ -19,7 +19,7 @@ public class TreeService implements ITreeService {
 
 	@Override
 	public TreeModel save(TreeModel tree) {
-		// TODO Auto-generated method stub
-		return null;
+		Long treeId = treeDAO.save(tree);
+		return treeDAO.findOneBy(treeId);
 	}
 }

@@ -9,6 +9,16 @@ public class TreeModel {
 	private String addressTree;
 	private double height;
 	private int ageTree;
+	private String status;
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public void setIdTree(long idTree) {
+		this.idTree = idTree;
+	}
 	public long getIdTree() {
 		return idTree;
 	}

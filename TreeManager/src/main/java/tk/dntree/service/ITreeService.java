@@ -7,4 +7,5 @@ import tk.dntree.model.TreeModel;
 public interface ITreeService {
 	List<TreeModel> findAll();
 	TreeModel save(TreeModel tree);
+	
 }
