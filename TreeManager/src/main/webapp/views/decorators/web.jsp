@@ -5,14 +5,23 @@
 <html>
 <head>
 <title><dec:title default="Trang chủ" /></title>
-
+<style>
+div.fixed {
+	  position: absolute;
+  right: 26px;
+  top: 112px;
+  z-index: 1;
+	
+}
+</style>
 <!-- css -->
 <link
 	href="<c:url value='/template/web/bootstrap/css/bootstrap.min.css' />"
 	rel="stylesheet" type="text/css" media="all" />
 <link href="<c:url value='/template/web/css/style.css' />"
 	rel="stylesheet" type="text/css" media="all" />
-
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div class="d-flex" id="wrapper">
@@ -23,7 +32,6 @@
 			<!-- header -->
 
 			<div class="container-fluid">
-
 				<dec:body />
 			</div>
 		</div>
@@ -47,6 +55,7 @@
 			var h = $(window).height(), offsetTop = 58; // Calculate the top offset
 
 			$('#map').css('height', (h - offsetTop));
+			$('#map').css('witdh', "80%");
 		}).resize();
 	</script>
 </body>

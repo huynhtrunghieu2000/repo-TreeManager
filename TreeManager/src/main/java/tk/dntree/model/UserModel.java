@@ -1,6 +1,6 @@
 package tk.dntree.model;
 
-public class UserModel {
+public class UserModel extends AbstractModel<UserModel>{
 	private long idUser;
 	private String fullName;
 	private int age;

@@ -1,6 +1,6 @@
 package tk.dntree.model;
 
-public class RoleModel {
+public class RoleModel extends AbstractModel<RoleModel>{
 	private long idRole;
 	private String nameRole;
 	public long getIdRole() {

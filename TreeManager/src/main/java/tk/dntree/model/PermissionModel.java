@@ -1,6 +1,6 @@
 package tk.dntree.model;
 
-public class PermissionModel {
+public class PermissionModel extends AbstractModel<PermissionModel> {
 	private long idPerm;
 	private long idRole;
 	private String namePerm;

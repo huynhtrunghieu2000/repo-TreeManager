@@ -1,6 +1,6 @@
 package tk.dntree.model;
 
-public class Tree_JobModel {
+public class Tree_JobModel extends AbstractModel<Tree_JobModel>{
 	private long idTree;
 	private long idJob;
 	public long getIdTree() {

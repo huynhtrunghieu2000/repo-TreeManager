@@ -3,7 +3,6 @@ package tk.dntree.controller.web.api;
 import java.io.IOException;
 
 import javax.inject.Inject;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +32,11 @@ public class TreeAPI extends HttpServlet {
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		TreeModel tree = HttpUtil.of(request.getReader()).toModel(TreeModel.class);
+		tree = treeService.update(tree);
+		System.out.print(tree);
 	}
 
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response)

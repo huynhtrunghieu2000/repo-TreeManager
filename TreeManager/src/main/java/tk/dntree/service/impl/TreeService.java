@@ -22,4 +22,11 @@ public class TreeService implements ITreeService {
 		Long treeId = treeDAO.save(tree);
 		return treeDAO.findOneBy(treeId);
 	}
+
+	@Override
+	public TreeModel update(TreeModel updateTree) {
+		//TreeModel oldTree= treeDAO.findOneBy(updateTree.getIdTree());
+		treeDAO.update(updateTree);
+		return treeDAO.findOneBy(updateTree.getIdTree());
+	}
 }

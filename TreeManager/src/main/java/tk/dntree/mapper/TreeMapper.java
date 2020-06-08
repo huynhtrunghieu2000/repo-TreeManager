@@ -20,6 +20,7 @@ public class TreeMapper implements RowMapper<TreeModel> {
 			tree.setHeight(resultSet.getDouble("ChieuCao"));
 			tree.setLatitude(resultSet.getDouble("ToaDoX"));
 			tree.setLongitude(resultSet.getDouble("ToaDoY"));
+			tree.setStatus(resultSet.getString("Status"));
 			return tree;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
