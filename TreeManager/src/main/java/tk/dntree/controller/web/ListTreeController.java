@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import tk.dntree.constant.SystemConstant;
 import tk.dntree.model.TreeModel;
 import tk.dntree.service.ITreeService;
-import tk.dntree.service.IUserService;
 
 @WebServlet(urlPatterns = { "/list-tree" })
 public class ListTreeController extends HttpServlet {

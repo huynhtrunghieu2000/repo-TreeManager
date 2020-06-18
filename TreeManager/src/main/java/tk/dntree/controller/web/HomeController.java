@@ -44,4 +44,10 @@ public class HomeController extends HttpServlet {
 			throws ServletException, IOException {
 
 	}
+	public IUserService getUserService() {
+		return userService;
+	}
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
 }
