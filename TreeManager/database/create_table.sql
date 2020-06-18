@@ -8,11 +8,12 @@ create table CAYXANH
 	MaCay int auto_increment not null,
 	GiongCay varchar(60) ,
 	LoaiCay varchar(40) ,
-	ToaDoX float not null,
-	ToaDoY float not null,
+	ToaDoX double not null,
+	ToaDoY double not null,
 	DiaChiCay varchar(80),
 	ChieuCao int,
 	SoTuoi int,
+	TrangThai varchar(40),
 	primary key(MaCay)
 );
 
@@ -42,8 +43,8 @@ create table CONGVIEC
 	MaNguoiDung varchar(40) not null,
 	TenCongViec varchar(40) not null,
 	LoaiCongViec varchar(40),
-	ThoiGianBatDau datetime,
-	ThoiGianKetThuc datetime,
+	ThoiGianBatDau timestamp,
+	ThoiGianKetThuc timestamp,
 	primary key(MaCongViec),
 	foreign key (MaNguoiDung) references NGUOIDUNG(MaNguoiDung)
 );
@@ -54,7 +55,7 @@ create table LIENKET_CHUCVU
 	MaLienKet int, -- 0 admin, 1 quan ly, 2 nhan vien
 	MaChucVu int not null,
 	MaNguoiDung varchar(40) not null,
-	ChoPhep int, -- 1 cho phep, 0 ko cho phep
+	ChoPhep boolean, -- 1 cho phep, 0 ko cho phep
 	primary key(MaLienKet),
 	foreign key (MaNguoiDung) references NGUOIDUNG(MaNguoiDung),
 	foreign key (MaChucVu) references CHUCVU(MaChucVu)

@@ -18,7 +18,7 @@ public class UserDAO extends AbstractDAO implements IUserDAO {
 		// ArrList contain result
 		ArrayList<UserModel> results = new ArrayList<>();
 		// Sql Statement
-		String sqlStmt="select * from nguoidung";
+		String sqlStmt=" select * from nguoidung";
 		//Câu lệnh chuẩn bị trước : select * from ?
 		PreparedStatement preStmt=null; 
 		Connection connectionDB = getConnection();

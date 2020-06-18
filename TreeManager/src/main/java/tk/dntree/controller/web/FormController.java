@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import tk.dntree.service.ITreeService;
-import tk.dntree.service.IUserService;
 
 @WebServlet(urlPatterns = { "/form" })
 public class FormController extends HttpServlet {
