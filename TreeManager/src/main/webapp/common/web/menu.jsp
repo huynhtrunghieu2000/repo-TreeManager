@@ -7,8 +7,8 @@
 	<div class="sidebar-heading">Quản Lý Cây Xanh</div>
 	<div class="list-group list-group-flush">
 		<a href="<c:url value='/home'/>"
-			class="list-group-item list-group-item-action bg-light">Bản đồ</a> <a
-			href="<c:url value='/list-tree'/>" class="list-group-item list-group-item-action bg-light">Danh sách cây</a>
+			class="list-group-item avtive list-group-item-action bg-light "  id="mapTab">Bản đồ</a> <a
+			href="<c:url value='/list-tree'/>" class="list-group-item list-group-item-action bg-light" id="listTreeTab">Danh sách cây</a>
 		<a href="#" class="list-group-item list-group-item-action bg-light">Công việc</a>
 		<a href="#" class="list-group-item list-group-item-action bg-light">Thống kê</a>
 	</div>

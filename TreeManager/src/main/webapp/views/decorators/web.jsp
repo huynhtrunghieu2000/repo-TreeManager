@@ -20,6 +20,16 @@ div.fixed {
 	rel="stylesheet" type="text/css" media="all" />
 <link href="<c:url value='/template/web/css/style.css' />"
 	rel="stylesheet" type="text/css" media="all" />
+	    <script
+      type="text/javascript"
+      src="<c:url value='/template/web/jquery/jquery.twbsPagination.js' />"
+    ></script>
+    <script
+      type="text/javascript"
+      src="<c:url value='/template/web/bootstrap/js/bootstrap.min.js' />"
+    ></script>
+    <script type="text/javascript"
+		src="<c:url value='/template/web/jquery/jquery.min.js' />"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -39,9 +49,10 @@ div.fixed {
 		<%@ include file="/common/web/footer.jsp"%>
 		<!-- footer -->
 	</div>
-
-	<script type="text/javascript"
-		src="<c:url value='/template/web/jquery/jquery.min.js' />"></script>
+    <script
+      src="<c:url value='/template/web/jquery/jquery.twbsPagination.min.js' />"
+    ></script>
+	
 	<script type="text/javascript"
 		src="<c:url value='/template/web/bootstrap/js/bootstrap.bundle.min.js' />"></script>
 	<script>
@@ -58,5 +69,6 @@ div.fixed {
 			$('#map').css('witdh', "80%");
 		}).resize();
 	</script>
+	
 </body>
 </html>

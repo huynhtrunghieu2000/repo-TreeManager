@@ -205,6 +205,9 @@
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB2GCaVRZE7pXySJWFdDkudO607EL38WU&callback=initMap"
 		async defer></script>
+		<script type="text/javascript">
+		document.getElementById("mapTab").className = "list-group-item avtive list-group-item-action active";
+		</script>
 </body>
 
 </html>
