@@ -1,14 +1,8 @@
 package tk.dntree.model;
 
 public class RoleModel extends AbstractModel<RoleModel>{
-	private long idRole;
 	private String nameRole;
-	public long getIdRole() {
-		return idRole;
-	}
-	public void setIdRole(long idRole) {
-		this.idRole = idRole;
-	}
+
 	public String getNameRole() {
 		return nameRole;
 	}

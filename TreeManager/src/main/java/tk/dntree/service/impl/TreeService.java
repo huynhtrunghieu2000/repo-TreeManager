@@ -27,6 +27,6 @@ public class TreeService implements ITreeService {
 	public TreeModel update(TreeModel updateTree) {
 		//TreeModel oldTree= treeDAO.findOneBy(updateTree.getIdTree());
 		treeDAO.update(updateTree);
-		return treeDAO.findOneBy(updateTree.getIdTree());
+		return treeDAO.findOneBy(updateTree.getId());
 	}
 }

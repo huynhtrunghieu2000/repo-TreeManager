@@ -20,10 +20,7 @@ div.fixed {
 	rel="stylesheet" type="text/css" media="all" />
 <link href="<c:url value='/template/web/css/style.css' />"
 	rel="stylesheet" type="text/css" media="all" />
-	    <script
-      type="text/javascript"
-      src="<c:url value='/template/web/jquery/jquery.twbsPagination.js' />"
-    ></script>
+	    
     <script
       type="text/javascript"
       src="<c:url value='/template/web/bootstrap/js/bootstrap.min.js' />"

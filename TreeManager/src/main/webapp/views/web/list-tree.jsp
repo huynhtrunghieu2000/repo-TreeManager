@@ -9,65 +9,58 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<script
-      type="text/javascript"
-      src="<c:url value='/template/pagination/jquery.twbsPagination.js' />"
-    ></script>
+<script type="text/javascript"
+	src="<c:url value='/template/pagination/jquery.twbsPagination.js' />"></script>
 <title>Danh sách cây</title>
 </head>
 
 <body>
-	<div class="container">
-		<h2>Danh sách cây</h2>
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Giống cây</th>
-					<th>Loại</th>
-					<th>Địa chỉ</th>
-					<th>Chiều cao</th>
-					<th>Tuổi</th>
-					<th>Tọa độ</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="item" items="${model.listResult}">
+	<form action="<c:url value ='/list-tree' />" id = "formSubmit">
+		<div class="container">
+			<h2>Danh sách cây</h2>
+			<table class="table table-hover">
+				<thead>
 					<tr>
-						<td>${item.idTree}</td>
-						<td>${item.specieTree}</td>
-						<td>${item.typeTree}</td>
-						<td>${item.addressTree}</td>
-						<td>${item.height}</td>
-						<td>${item.ageTree}</td>
-						<td>${item.latitude},${item.longitude}</td>
+						<th>ID</th>
+						<th>Giống cây</th>
+						<th>Loại</th>
+						<th>Địa chỉ</th>
+						<th>Chiều cao</th>
+						<th>Tuổi</th>
+						<th>Tọa độ</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<c:forEach var="item" items="${model.listResult}">
+						<tr>
+							<td>${item.id}</td>
+							<td>${item.specieTree}</td>
+							<td>${item.typeTree}</td>
+							<td>${item.addressTree}</td>
+							<td>${item.height}</td>
+							<td>${item.ageTree}</td>
+							<td>${item.latitude},${item.longitude}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
 
-		<ul id="pagination" class="pagination">
-		<li></li>
-		</ul>
-	</div>
+			<ul id="pagination" class="pagination">
+			</ul>
+		</div>
+	</form>
 	<!-- /#page-content-wrapper -->
 
-	<script>
+	<script type="text/javascript">
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({
-				totalPages : totalPages,
+				totalPages : 35,
 				visiblePages : 10,
-				startPage : currentPage,
-				/*onPageClick : function(event, page) {
-					if (currentPage != page) {
-						//$('#maxPageItem').val(limit);
-						$('#page').val(page);
-						//$('#sortName').val('title');
-						//$('#sortBy').val('desc');
-						//$('#type').val('list');
-						//$('#formSubmit').submit();
-					}
-				}*/
+				onPageClick : function(event, page) {
+					console.info(page + ' (from options)');
+				}
+			}).on('page', function(event, page) {
+				console.info(page + ' (from event listening)');
 			});
 		});
 	</script>

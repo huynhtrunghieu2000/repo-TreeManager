@@ -12,7 +12,7 @@ public class TreeMapper implements RowMapper<TreeModel> {
 
 		try {
 			TreeModel tree = new TreeModel();
-			tree.setIdTree(resultSet.getInt("MaCay"));
+			tree.setId(resultSet.getInt("MaCay"));
 			tree.setSpecieTree(resultSet.getString("GiongCay"));
 			tree.setTypeTree(resultSet.getString("LoaiCay"));
 			tree.setAgeTree(resultSet.getInt("SoTuoi"));

@@ -1,7 +1,6 @@
 package tk.dntree.model;
 
 public class TreeModel extends AbstractModel<TreeModel>{
-	private long idTree;
 	private String specieTree;
 	private String typeTree;
 	private double latitude;
@@ -10,12 +9,6 @@ public class TreeModel extends AbstractModel<TreeModel>{
 	private double height;
 	private int ageTree;
 	private String status;
-	public long getIdTree() {
-		return idTree;
-	}
-	public void setIdTree(long idTree) {
-		this.idTree = idTree;
-	}
 	public String getSpecieTree() {
 		return specieTree;
 	}

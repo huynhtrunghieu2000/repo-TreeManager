@@ -1,17 +1,11 @@
 package tk.dntree.model;
 
 public class PermissionModel extends AbstractModel<PermissionModel> {
-	private long idPerm;
 	private long idRole;
 	private String namePerm;
 	private String codePerm;
 	private boolean isPermiss;
-	public long getIdPerm() {
-		return idPerm;
-	}
-	public void setIdPerm(long idPerm) {
-		this.idPerm = idPerm;
-	}
+
 	public long getIdRole() {
 		return idRole;
 	}

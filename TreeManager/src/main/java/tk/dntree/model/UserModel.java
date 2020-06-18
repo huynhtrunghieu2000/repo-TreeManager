@@ -1,7 +1,6 @@
 package tk.dntree.model;
 
 public class UserModel extends AbstractModel<UserModel>{
-	private long idUser;
 	private String fullName;
 	private int age;
 	private String address;
@@ -31,11 +30,5 @@ public class UserModel extends AbstractModel<UserModel>{
 	}
 	public void setAge(int age) {
 		this.age = age;
-	}
-	public long getIdUser() {
-		return idUser;
-	}
-	public void setIdUser(long idUser) {
-		this.idUser = idUser;
 	}
 }

@@ -27,7 +27,7 @@ public class TreeDAO extends AbstractDAO<TreeModel> implements ITreeDAO {
 				+ " SET LoaiCay = ? , GiongCay = ?, ChieuCao= ?, SoTuoi= ?, ToaDoX= ?, ToaDoY= ?, DiaChiCay= ?, Status = ?"
 				+ " WHERE MaCay= ?";
 		update(sqlStmt, tree.getTypeTree(), tree.getSpecieTree(), tree.getHeight(), tree.getAgeTree(),
-				tree.getLatitude(), tree.getLongitude(), tree.getAddressTree(),tree.getStatus(), tree.getIdTree() );
+				tree.getLatitude(), tree.getLongitude(), tree.getAddressTree(),tree.getStatus(), tree.getId() );
 	}
 
 	@Override

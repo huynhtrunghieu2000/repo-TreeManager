@@ -11,7 +11,7 @@ public class UserMapper implements RowMapper<UserModel> {
 	public UserModel MapRow(ResultSet resultSet) {
 		try {
 			UserModel user = new UserModel();
-			user.setIdUser(resultSet.getInt("ID_user"));
+			user.setId(resultSet.getInt("ID_user"));
 			//.....
 			return user;
 		} catch (SQLException e) {
