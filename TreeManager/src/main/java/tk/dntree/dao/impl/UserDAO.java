@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package tk.dntree.dao.impl;
 
 import java.sql.Connection;
@@ -60,3 +61,22 @@ public class UserDAO extends AbstractDAO implements IUserDAO {
 	}
 
 }
+=======
+package tk.dntree.dao.impl;
+
+import java.util.List;
+
+import tk.dntree.dao.IUserDAO;
+import tk.dntree.mapper.UserMapper;
+import tk.dntree.model.UserModel;
+
+public class UserDAO extends AbstractDAO<UserModel> implements IUserDAO {
+
+	@Override
+	public List<UserModel> findAll() {
+		String sqlStmt = "SELECT * FROM nguoidung";
+		return query(sqlStmt,new UserMapper());
+	}
+
+}
+>>>>>>> e2e4f7614756a3b24d03cd26537404f7e753fec8

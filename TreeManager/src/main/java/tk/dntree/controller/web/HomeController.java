@@ -10,27 +10,39 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import tk.dntree.constant.SystemConstant;
+import tk.dntree.model.TreeModel;
 import tk.dntree.service.ITreeService;
 import tk.dntree.service.IUserService;
 
-@WebServlet(urlPatterns = {"/home"})
+@WebServlet(urlPatterns = { "/home", "/dang-nhap" })
 public class HomeController extends HttpServlet {
 
 	@Inject
-	private IUserService userService;
-	
-	@Inject
 	private ITreeService treeService;
 	private static final long serialVersionUID = 2990196416970679956L;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("tree", treeService.findAll());
-		//request.setAttribute("user", userService.findAll());
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
-		rd.forward(request, response);
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String action = request.getParameter("action");
+		if (action != null && action.equals("login")) {
+			RequestDispatcher rd = request.getRequestDispatcher("/views/login.jsp");
+			rd.forward(request, response);
+		} else if (action != null && action.equals("logout")) {
+
+		} else {
+			TreeModel model = new TreeModel();
+			model.setListResult(treeService.findAll());
+			request.setAttribute(SystemConstant.MODEL, model);
+			RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
+			rd.forward(request, response);
+		}
+
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 	public IUserService getUserService() {
 		return userService;

@@ -8,6 +8,7 @@ import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,18 +76,20 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				int index = i + 1;
 				if (parameter instanceof Long) {
 					preStmt.setLong(index, (Long) parameter);
-				}else if(parameter instanceof String) {
+				} else if (parameter instanceof String) {
 					preStmt.setString(index, (String) parameter);
-				}else if(parameter instanceof int[]) {
-					preStmt.setInt(index, (int) parameter);
-				}else if(parameter instanceof boolean[]) {
-					preStmt.setBoolean(index, (boolean) parameter);
-				}else if(parameter instanceof float[]) {
-					preStmt.setFloat(index, (float) parameter);
-				}else if(parameter instanceof double[]) {
-					preStmt.setDouble(index, (double) parameter);
-				}else if(parameter instanceof Timestamp) {
-					preStmt.setTimestamp(index,	(Timestamp)parameter);
+				} else if (parameter instanceof Integer) {
+					preStmt.setInt(index, (Integer) parameter);
+				} else if (parameter instanceof Boolean) {
+					preStmt.setBoolean(index, (Boolean) parameter);
+				} else if (parameter instanceof Float) {
+					preStmt.setFloat(index, (Float) parameter);
+				} else if (parameter instanceof Double) {
+					preStmt.setDouble(index, (Double) parameter);
+				} else if (parameter instanceof Timestamp) {
+					preStmt.setTimestamp(index, (Timestamp) parameter);
+				} else if (parameter == null) {
+					preStmt.setNull(index, Types.NULL);
 				}
 			}
 		} catch (SQLException e) {
@@ -101,19 +104,20 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		PreparedStatement preStmt = null;
 		try {
 			connectionDB = getConnection();
+			connectionDB.setAutoCommit(false);
 			preStmt = connectionDB.prepareStatement(sql);
 			setParameters(preStmt, parameters);
 			preStmt.executeUpdate();
 			connectionDB.commit();
-		}catch(SQLException e){
-			if(connectionDB!=null) {
+		} catch (SQLException e) {
+			if (connectionDB != null) {
 				try {
 					connectionDB.rollback();
-				}catch(SQLException e1) {
+				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
 			}
-		}finally {
+		} finally {
 			try {
 				if (connectionDB != null) {
 					connectionDB.close();
@@ -131,29 +135,29 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 	public Long insert(String sql, Object... parameters) {
 		Connection connectionDB = null;
 		PreparedStatement preStmt = null;
-		ResultSet resultSet=null;
+		ResultSet resultSet = null;
 		try {
-			Long id=null;
+			Long id = null;
 			connectionDB = getConnection();
 			connectionDB.setAutoCommit(false);
-			preStmt = connectionDB.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+			preStmt = connectionDB.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			setParameters(preStmt, parameters);
 			preStmt.executeUpdate();
-			resultSet=preStmt.getGeneratedKeys();
-			if(resultSet.next()) {
-				id=resultSet.getLong(1);
+			resultSet = preStmt.getGeneratedKeys();
+			if (resultSet.next()) {
+				id = resultSet.getLong(1);
 			}
 			connectionDB.commit();
 			return id;
-		}catch(SQLException e){
-			if(connectionDB!=null) {
+		} catch (SQLException e) {
+			if (connectionDB != null) {
 				try {
 					connectionDB.rollback();
-				}catch(SQLException e1) {
+				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
 			}
-		}finally {
+		} finally {
 			try {
 				if (connectionDB != null) {
 					connectionDB.close();

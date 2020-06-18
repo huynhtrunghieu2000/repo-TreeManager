@@ -2,7 +2,7 @@ package tk.dntree.model;
 
 import java.sql.Timestamp;
 
-public class JobsModel {
+public class JobsModel extends AbstractModel<JobsModel> {
 	private long idJob;
 	private String nameJob;
 	private String typeJob;
